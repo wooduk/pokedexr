@@ -1,7 +1,7 @@
 {
-  "bulbascraper": {
+  "pokedexr": {
     "Overview": "/",
-    "Bulbascraper": "/core",
+    "Bulbascraper": "/scraper",
     "Title": "/augmentation"
   }
 }

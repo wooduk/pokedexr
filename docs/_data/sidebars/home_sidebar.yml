@@ -11,11 +11,11 @@ entries:
       url: /
     - output: web,pdf
       title: Bulbascraper
-      url: /core
+      url: /scraper
     - output: web,pdf
       title: Title
       url: /augmentation
     output: web
-    title: bulbascraper
+    title: pokedexr
   output: web
   title: Sidebar

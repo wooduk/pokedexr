@@ -8,7 +8,6 @@ verify_ssl = true
 [packages]
 jupyterlab = "*"
 nbdev = "*"
-pydrive = "*"
 requests = "*"
 beautifulsoup4 = "*"
 matplotlib = "*"
@@ -16,7 +15,6 @@ altair = "*"
 pillow = "*"
 opencv-python = "*"
 boto3 = "*"
-tdqm = "*"
 tqdm = {git = "https://github.com/tqdm/tqdm.git",ref = "master"}
 
 [requires]
