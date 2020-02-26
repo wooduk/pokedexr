@@ -128,7 +128,7 @@ def main():
         pass
     else:
         print(f"Gathering image urls for each card in the deck.")
-        for card in tqdm(cards[:3]):
+        for card in tqdm(cards):
             card.update({'img_urls':get_image_urls(card.get('details_url','ERROR'))})
 
         with open(tfile,'w') as f:
@@ -136,7 +136,7 @@ def main():
 
     # for each image_url fetch images and push to storage
     print(f"Fetching images and pushing to storage [{storage_location}]")
-    for card in tqdm(cards[:3]):
+    for card in tqdm(cards):
         for url in card.get('img_urls'):
             image_data, fname = fetch_image(url)
             store_image(image_data, fname, f"{storage_location}/{card.get('name')}")
