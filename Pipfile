@@ -16,6 +16,8 @@ altair = "*"
 pillow = "*"
 opencv-python = "*"
 boto3 = "*"
+tdqm = "*"
+tqdm = {git = "https://github.com/tqdm/tqdm.git",ref = "master"}
 
 [requires]
 python_version = "3.8"

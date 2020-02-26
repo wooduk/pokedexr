@@ -2,19 +2,27 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"BASE_URL": "00_core.ipynb",
-         "get_camel_name": "00_core.ipynb",
-         "get_image_from_page": "00_core.ipynb",
-         "IMG_EXCEPTIONS": "00_core.ipynb",
-         "augment_brightness_camera_images": "00_core.ipynb",
-         "transform_image": "00_core.ipynb",
-         "fetch_background_images": "00_core.ipynb",
-         "BKG_SRC": "00_core.ipynb",
-         "apply_random_background": "00_core.ipynb",
-         "wr": "00_core.ipynb",
-         "push_images_to_s3": "00_core.ipynb"}
+index = {"fetch_links": "01_core.ipynb",
+         "SCHEME": "01_core.ipynb",
+         "BULB_BASE_URL": "01_core.ipynb",
+         "get_camel_name": "01_core.ipynb",
+         "get_image_urls": "01_core.ipynb",
+         "IMG_EXCEPTIONS": "01_core.ipynb",
+         "fetch_image": "01_core.ipynb",
+         "store_image": "01_core.ipynb",
+         "push_image_to_s3": "01_core.ipynb",
+         "save_image_local": "01_core.ipynb",
+         "BUCKET_NAME": "01_core.ipynb",
+         "LOCAL_FOLDER": "01_core.ipynb",
+         "main": "01_core.ipynb",
+         "augment_brightness_camera_images": "02_augmentation.ipynb",
+         "transform_image": "02_augmentation.ipynb",
+         "fetch_background_images": "02_augmentation.ipynb",
+         "BKG_SRC": "02_augmentation.ipynb",
+         "apply_random_background": "02_augmentation.ipynb"}
 
-modules = ["bulbascraper.py"]
+modules = ["core.py",
+           "augmentation.py"]
 
 doc_url = "https://wooduk.github.io/bulbascraper/"
 

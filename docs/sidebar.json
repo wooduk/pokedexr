@@ -1,6 +1,7 @@
 {
   "bulbascraper": {
     "Overview": "/",
-    "Bulbascraper": "/core"
+    "Bulbascraper": "/core",
+    "Title": "/augmentation"
   }
 }
