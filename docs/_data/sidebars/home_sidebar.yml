@@ -10,11 +10,17 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Bulbascraper
+      title: Bulbapedia Scraper
       url: /scraper
     - output: web,pdf
-      title: Title
+      title: Augmenting Images
       url: /augmentation
+    - output: web,pdf
+      title: The article
+      url: /ExampleBlog
+    - output: web,pdf
+      title: train NN to classify pokemon cards
+      url: /Training
     output: web
     title: pokedexr
   output: web

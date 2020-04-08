@@ -2,27 +2,36 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"fetch_links": "01_scraper.ipynb",
-         "SCHEME": "01_scraper.ipynb",
-         "BULB_BASE_URL": "01_scraper.ipynb",
-         "get_camel_name": "01_scraper.ipynb",
-         "get_image_urls": "01_scraper.ipynb",
+index = {"bulba_url_for": "01_scraper.ipynb",
+         "sanitize_name": "01_scraper.ipynb",
+         "fetch_page_soup": "01_scraper.ipynb",
+         "save_card_list": "01_scraper.ipynb",
+         "load_card_list": "01_scraper.ipynb",
+         "fetch_card_list": "01_scraper.ipynb",
+         "dedupe_image_urls": "01_scraper.ipynb",
+         "extract_image_urls": "01_scraper.ipynb",
          "IMG_EXCEPTIONS": "01_scraper.ipynb",
+         "isTrainerCard": "01_scraper.ipynb",
+         "extract_pokemon_card_text": "01_scraper.ipynb",
+         "extract_trainer_card_text": "01_scraper.ipynb",
+         "extract_card_text": "01_scraper.ipynb",
+         "get_card_numbers": "01_scraper.ipynb",
+         "update_card_details": "01_scraper.ipynb",
          "fetch_image": "01_scraper.ipynb",
-         "store_image": "01_scraper.ipynb",
-         "push_image_to_s3": "01_scraper.ipynb",
-         "save_image_local": "01_scraper.ipynb",
-         "BUCKET_NAME": "01_scraper.ipynb",
-         "LOCAL_FOLDER": "01_scraper.ipynb",
-         "main": "01_scraper.ipynb",
-         "augment_brightness_camera_images": "02_augmentation.ipynb",
+         "save_image": "01_scraper.ipynb",
+         "fetch_images_for_cards": "01_scraper.ipynb",
+         "PROJ_HOME": "01_scraper.ipynb",
+         "fetch_card_img_s3": "01_scraper.ipynb",
+         "augment_brightness": "02_augmentation.ipynb",
          "transform_image": "02_augmentation.ipynb",
          "fetch_background_images": "02_augmentation.ipynb",
          "BKG_SRC": "02_augmentation.ipynb",
-         "apply_random_background": "02_augmentation.ipynb"}
+         "apply_random_background": "02_augmentation.ipynb",
+         "img_s3keys": "02_augmentation.ipynb",
+         "augment_card_and_save": "02_augmentation.ipynb"}
 
 modules = ["scraper.py",
-           "augmentation.py"]
+           "imgaug.py"]
 
 doc_url = "https://wooduk.github.io/pokedexr/"
 

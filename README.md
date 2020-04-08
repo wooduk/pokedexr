@@ -10,4 +10,4 @@ This file will become your README and also the index of your documentation.
 
 ## How to use
 
-    python bulbascraper.py GX_Starter_Deck s3:pokedexproject/card_images/original/
+    

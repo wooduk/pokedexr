@@ -1,7 +1,9 @@
 {
   "pokedexr": {
     "Overview": "/",
-    "Bulbascraper": "/scraper",
-    "Title": "/augmentation"
+    "Bulbapedia Scraper": "/scraper",
+    "Augmenting Images": "/augmentation",
+    "The article": "/ExampleBlog",
+    "train NN to classify pokemon cards": "/Training"
   }
 }
