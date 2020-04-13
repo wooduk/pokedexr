@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Pokedexr</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+	<body>
+        <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container ">
+      <a class="navbar-brand" href="/"><img src='../static/homeicon.png' height=48/></a>
+      
+      
+    </div>
+  </nav>
+        
+         <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class='jumbotron'>
+            <h1>Pokedexr</h1>
+            <p class="lead">Gotta recognise them all!</p>
+          </div>
+        <label class="btn btn-primary">
+            Capture <input id="poke-input" type="file" accept="image/*" capture="environment"  hidden>
+        </label>
+          
+          <img id='image-picked' class="mimg float-left"></img>
+            
+        
+      </div>
+    </div>
+  </div>
+        
+        
+        <!-- javascript -->
+        <script>
+            //var el = x => document.getElementById(x);
+
+            const uploadFile = (file) => {
+
+                // add file to FormData object
+                const fd = new FormData();
+                fd.append('file', file);
+
+                // send `POST` request
+                fetch('/analyze', {
+                    method: 'POST',
+                    redirect: 'follow',
+                    body: fd
+                })
+                .then(response => {
+                    // HTTP 301 response
+                    if (response.redirected) {
+                            window.location.href = response.url;
+                        }
+                })
+                .catch(err => console.error(err));
+            }
+
+            // select file input
+            const input = document.getElementById('poke-input');
+
+            // add event listener
+            input.addEventListener('change', () => {
+                uploadFile(input.files[0]);
+            });
+
+                
+                
+                
+                
+//                   var uploadFiles = el("poke-input").files;
+//                   if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
+//                   console.log(uploadFiles[0].name)
+
+//                   var reader = new FileReader();
+//                   reader.onload = function(e) {
+//                     console.log(e)
+//                     el("image-picked").src = e.target.result;
+//                   };
+//                   reader.readAsDataURL(uploadFiles[0]);
+                    
+//                   var loc = window.location;
+//                   var fileData = new FormData();
+//                   fileData.append("file", uploadFiles[0]);
+
+//                   fetch(`${loc.protocol}//${loc.hostname}:${loc.port}/analyze`, {
+//                       method: "POST", 
+//                       body: fileData
+//                     }).then(res => {
+//                       console.log("Request complete! response:", res);
+//                     });
+                
+//                   var xhr = new XMLHttpRequest();
+//                   var loc = window.location;
+//                   xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
+//                     true);
+//                   xhr.onerror = function() {
+//                     alert(xhr.responseText);
+//                   };
+//                   xhr.onload = function(e) {
+//                     if (this.readyState === 4) {
+//                       var response =e.target.responseText;
+                      
+//                       el("pname").innerHTML = `<p>Detected: ${response["result"]}</pname>`
+//                       el("dcard").src =`${response["img_url"]}`;
+//                       el("card-text").innerHTML = `${response["html"]}`; 
+//                       el("arrow").style = "width:50px; display:inline; float:left; margin-top:3em"
+//                       */
+//                     }
+//                   };
+
+//                   var fileData = new FormData();
+//                   fileData.append("file", uploadFiles[0]);
+
+//                   xhr.send(fileData);
+
+                //}
+        </script>
+        
+	</body>
+</html>

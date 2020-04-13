@@ -15,6 +15,7 @@ import numpy as np
 from matplotlib.pyplot import imread
 from tqdm import tqdm
 
+from pokedexr import scraper
 
 # Cell
 def augment_brightness(image,brightness):
@@ -25,7 +26,6 @@ def augment_brightness(image,brightness):
     image1[:,:,2] = (image1[:,:,2]*random_bright).clip(0,254)
     image1 = cv2.cvtColor(image1,cv2.COLOR_HSV2RGB)
     return image1
-
 
 # Cell
 def transform_image(img,ang_range=0,shear_range=0,trans_range=0, scale_range=1e-4,brightness=0):
@@ -133,7 +133,6 @@ def apply_random_background(img,background_images):
 
     return img1
 
-
 # Cell
 def img_s3keys(card):
     return [card.get('name')+'/'+i.split('/')[-1] for i in card.get('img_urls')]
@@ -143,7 +142,7 @@ def augment_card_and_save(card, n_images_out = 100, to=Path('.')):
     """Produce augmented copies of original image"""
     for key in img_s3keys(card):
         if key[-3:] == 'jpg':
-            src_img = imgfetch.fetch_card_img_s3(key)
+            src_img = scraper.fetch_card_img_s3(key)
             for i in tqdm(range(n_images_out)):
                 img = transform_image(src_img, ang_range=7.5, shear_range=2, trans_range=20, scale_range=0.25, brightness=0.3)
                 img = apply_random_background(img, background_images)
@@ -153,4 +152,4 @@ def augment_card_and_save(card, n_images_out = 100, to=Path('.')):
                 imgByteArr = io.BytesIO()
                 bimg.save(imgByteArr, format='jpeg')
                 fname = f"{uuid.uuid4().hex}.jpg"
-                imgfetch.save_image(imgByteArr.getvalue(), to/fname)
+                scraper.save_image(imgByteArr.getvalue(), to/fname)
